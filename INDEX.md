@@ -7,6 +7,8 @@ for “better” in [training, research, operations]: do OpenStack orchestration
 
 -   [Basic Information](BASIC_INFO.md)
 
+-   [Getting Started](GETTING_STARTED.md)
+
 -   [Template examples](heat/Templates)
 
 -   [Environment Files](heat/Environments)
