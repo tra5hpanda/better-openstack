@@ -1,0 +1,136 @@
+description: Heat Template - scaled environment
+heat_template_version: '2018-08-31'
+parameters:
+  network1_size:
+    type: number
+    description: Size of the first topology.
+  network2_size:
+    type: number
+    description: Size of the second topology.
+  network3_size:
+    type: number
+    description: Size of the third topology.
+
+resources:
+
+  network1:
+    type: OS::Neutron::Net
+    properties: {admin_state_up: true, name: network1, shared: false}
+
+  network2:
+    type: OS::Neutron::Net
+    properties: {admin_state_up: true, name: network2, shared: false}
+
+  network3:
+    type: OS::Neutron::Net
+    properties: {admin_state_up: true, name: network3, shared: false}
+    
+  subnet1:
+    type: OS::Neutron::Subnet
+    depends_on: network1
+    properties:
+      allocation_pools: 
+      - {end: 10.1.0.250, start: 10.1.0.200}  
+      cidr: 10.1.0.0/24
+      gateway_ip: 10.1.0.254
+      network_id: { get_resource: network1 }
+      dns_nameservers: [8.8.8.8]
+      enable_dhcp: true
+      host_routes: []
+      ip_version: 4
+      name: subnet1
+
+  subnet2:
+    type: OS::Neutron::Subnet
+    depends_on: network2
+    properties:
+      allocation_pools: 
+      - {end: 10.2.0.250, start: 10.2.0.200}  
+      cidr: 10.2.0.0/24
+      gateway_ip: 10.2.0.254
+      network_id: { get_resource: network2 }
+      dns_nameservers: [8.8.8.8]
+      enable_dhcp: true
+      host_routes: []
+      ip_version: 4
+      name: subnet2
+    
+  subnet3:
+    type: OS::Neutron::Subnet
+    depends_on: network3
+    properties:
+      allocation_pools: 
+      - {end: 10.3.0.250, start: 10.3.0.200}  
+      cidr: 10.3.0.0/24
+      gateway_ip: 10.3.0.254
+      network_id: { get_resource: network3 }
+      dns_nameservers: [8.8.8.8]
+      enable_dhcp: true
+      host_routes: []
+      ip_version: 4
+      name: subnet3
+
+  gateway_router:
+    type: OS::Neutron::Router
+    properties:
+      external_gateway_info: {network: public}
+      name: gateway_router
+      
+  router_interface1:
+    type: OS::Neutron::RouterInterface
+    depends_on: subnet1
+    properties:
+      router_id: {get_resource: gateway_router}
+      subnet_id: {get_resource: subnet1}
+
+  router_interface2:
+    type: OS::Neutron::RouterInterface
+    depends_on: subnet2
+    properties:
+      router_id: {get_resource: gateway_router}
+      subnet_id: {get_resource: subnet2}
+
+  router_interface3:
+    type: OS::Neutron::RouterInterface
+    depends_on: subnet3
+    properties:
+      router_id: {get_resource: gateway_router}
+      subnet_id: {get_resource: subnet3}
+
+  linuxhost_group1:
+    type: OS::Heat::ResourceGroup
+    depends_on: subnet1
+    properties:
+      count: {get_param: network1_size}
+      resource_def:
+        type: OS::Nova::Linuxhost1
+
+  linuxhost_group2:
+    type: OS::Heat::ResourceGroup
+    depends_on: subnet2
+    properties:
+      count: {get_param: network2_size}
+      resource_def:
+        type: OS::Nova::Linuxhost2
+
+  windowshost_group3:
+    type: OS::Heat::ResourceGroup
+    depends_on: subnet3
+    properties:
+      count: {get_param: network3_size}
+      resource_def:
+        type: OS::Nova::Windowshost3
+
+  web_host:
+    type: OS::Nova::Server
+    properties:
+      name: web_host
+      image: Debian LXDE
+      flavor: cy.small
+      networks:
+      - subnet: subnet1
+      user_data:
+        str_replace:
+          template: {get_file: "https://raw.githubusercontent.com/tra5hpanda/better-openstack/master/heat/host_scripts/web.sh"}
+          params: 
+            $password: password

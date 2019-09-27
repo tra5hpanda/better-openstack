@@ -1,0 +1,16 @@
+parameter_defaults:
+  linux1image: Ubuntu 16.04
+  linux2image: Ubuntu 18.04
+  windowsimage: Windows 10 LTSC 2019
+  linux1flavor: cy.small
+  linux2flavor: cy.medium
+  windowsflavor: cy.large
+  vulnport1: 8080
+  vulnport2: 1234
+  vulnport3: 8888
+  vulnport4: 4444
+
+resource_registry:
+  "OS::Nova::Linuxhost1": https://raw.githubusercontent.com/tra5hpanda/better-openstack/master/heat/Templates/nested_templates/easy_linux1.yaml
+  "OS::Nova::Linuxhost2": https://raw.githubusercontent.com/tra5hpanda/better-openstack/master/heat/Templates/nested_templates/easy_linux2.yaml
+  "OS::Nova::Windowshost3": https://raw.githubusercontent.com/tra5hpanda/better-openstack/master/heat/Templates/nested_templates/easy_windows.yaml

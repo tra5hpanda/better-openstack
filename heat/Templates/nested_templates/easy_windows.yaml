@@ -1,0 +1,25 @@
+description: Heat Template - Windows User network 1
+heat_template_version: '2018-08-31'
+parameters:
+
+  windowsimage:
+    type: string
+  windowsflavor:
+    type: string
+
+resources:
+  windowshosts:
+    type: OS::Nova::Server
+    properties:
+      name: windows_host
+      image: {get_param: windowsimage}
+      flavor: {get_param: windowsflavor}
+      networks:
+      - subnet: subnet3
+      user_data: |
+        #ps1_sysnative
+        $ErrorActionPreference = 'SilentlyContinue'
+        net user /add user Security! /y
+        net localgroup administrators /add user
+        exit 1001
+      user_data_format: RAW

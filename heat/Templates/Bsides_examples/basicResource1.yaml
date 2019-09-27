@@ -1,0 +1,23 @@
+description: Heat Template - Basic Resource-example
+##The version is important!
+heat_template_version: '2018-08-31'
+resources:
+##Each major sections are left justified; indent 2-spaces
+##for each item and properties, etc.
+  linuxhost:
+##The "type" defines WHAT you are creating; refernce this at:
+##https://docs.openstack.org/heat/rocky/template_guide/openstack.html
+    type: OS::Nova::Server
+    properties:
+      name: Linux_host
+      image: Ubuntu 16.04
+      flavor: cy.small
+      networks:
+      - network: public
+      user_data:  |
+        #!/bin/bash
+        useradd user -m -U -s /bin/bash
+        usermod -aG sudo user
+        echo "root:GoodSecurity!" | chpasswd
+        echo "user:Security!" | chpasswd
+      user_data_format: RAW

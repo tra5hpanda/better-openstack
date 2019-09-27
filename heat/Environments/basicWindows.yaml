@@ -1,0 +1,9 @@
+parameter_defaults:
+  hostname: MyWindowsHost
+  image: Windows 10 LTSC 2019
+  flavor: cy.medium
+  user: user
+  password: Security!
+
+resource_registry:
+  "OS::Nova::Host": https://raw.githubusercontent.com/tra5hpanda/better-openstack/master/heat/Templates/nested_templates/basic_windows.yaml

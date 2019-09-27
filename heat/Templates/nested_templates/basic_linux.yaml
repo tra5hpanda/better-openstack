@@ -1,0 +1,41 @@
+description: Heat Template - Linux User network
+heat_template_version: '2018-08-31'
+parameters:
+
+  hostname:
+    type: string
+  image:
+    type: string
+  flavor:
+    type: string
+  user:
+    type: string
+  password:
+    type: string
+
+resources:
+
+  linuxhosts:
+    type: OS::Nova::Server
+    properties:
+      name: {get_param: hostname}
+      image: {get_param: image}
+      flavor: {get_param: flavor}
+      networks:
+      - network: public
+      user_data:
+        str_replace:
+          template: |
+            #!/bin/bash            
+            echo 127.0.0.1 $(hostname) >> /etc/hosts
+            export DEBIAN_FRONTEND=noninteractive
+            # User Creation
+            echo "CREATE USER"
+            useradd $user -m -U -s /bin/bash
+            usermod -aG sudo $user
+            echo "root:$password" | chpasswd
+            echo "$user:$password" | chpasswd
+          params: 
+            $user: { get_param: user }
+            $password: { get_param: password }
+      user_data_format: RAW

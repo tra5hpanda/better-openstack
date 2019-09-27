@@ -1,0 +1,34 @@
+description: Heat Template - Basic User Creation
+heat_template_version: '2018-08-31'
+parameters:
+
+  User_Number:
+    type: number
+    default: 5
+
+resources:
+
+  Password:
+    type: OS::Heat::RandomString
+    properties:
+      character_classes: [{"class": letters, "min": 10}]
+      length: 10
+      salt: mysalt
+
+  User_group:
+    type: OS::Heat::ResourceGroup
+    properties:
+      count: { get_param : User_Number }
+      resource_def:
+        type: OS::Keystone::User
+        properties:
+          enabled: TRUE
+          name: User_%index%
+          password: { get_resource : Password }
+          roles: [{"project": bsides, "role": user}]
+
+outputs:
+
+  User_Passwords:
+    description: The default password generated for the list of users
+    value: { get_resource : Password }

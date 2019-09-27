@@ -1,0 +1,12 @@
+description: Heat Template - Basic Resource-best
+heat_template_version: '2018-08-31'
+##Let's actually define these parameters in an environment file.
+##Additionally we can define custom "resources" in the environment file.
+##With these features, we can change the "guts", without editing the structure.
+resources:
+  myhost:
+    type: OS::Nova::Host
+outputs:
+  ip_address:
+    description: IP address of the instance
+    value: { get_attr: [myhost, first_address] }
