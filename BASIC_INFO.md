@@ -178,7 +178,7 @@ options available on the left hand side of the browser is important.
 
 3.  You will hit the “+ Launch Stack” button.
 
-![Project/Orchestration](images\OrchTab.png)
+![Project/Orchestration](images/OrchTab.png)
 
 4.  You may provide a file located on your local machine, a URL, or direct
     input. The URL may point to a code repository, but ensure you use the “raw”
@@ -187,22 +187,22 @@ options available on the left hand side of the browser is important.
 5.  If using an environment file, this is selected in the same way, at the same
     tab as the template file with the options of a file or direct input.
     
-    ![Stack Create](images\StackCreate.png)
+    ![Stack Create](images/StackCreate.png)
 
 6.  Provide any parameters required, or change parameter options as needed.
 
-![Parameters](images\parameters.png)
+![Parameters](images/Parameters.png)
 
 7.  Expanding the compute tab, you will see the option for “instances”. This is
     where you can access the console for any of the instances you deploy in your
     stack. Click on the instance name, which opens a new view.
     
-    ![Compute Access](images\ComputerAccess.png)
+    ![Compute Access](images/ComputerAccess.png)
 
 8.  From this instance view you will see a “Console” tab. This is where you can
     access the GUI/CLI of the instance OS.
     
-    ![Console View](images\Console.png)
+    ![Console View](images/Console.png)
 
 Want to give the Client a try?
 ==============================
