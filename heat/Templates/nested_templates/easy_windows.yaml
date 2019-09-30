@@ -15,7 +15,7 @@ resources:
       image: {get_param: windowsimage}
       flavor: {get_param: windowsflavor}
       networks:
-      - allocate_network: auto
+      - subnet: subnet3
       user_data: |
         #ps1_sysnative
         $ErrorActionPreference = 'SilentlyContinue'
