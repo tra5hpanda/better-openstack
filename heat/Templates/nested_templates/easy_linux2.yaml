@@ -20,7 +20,7 @@ resources:
       image: {get_param: linux2image}
       flavor: {get_param: linux2flavor}
       networks:
-      - subnet: subnet2
+      - allocate_network: auto
       user_data:
             str_replace:
               template: |
