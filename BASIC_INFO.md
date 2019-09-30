@@ -33,7 +33,7 @@ consists of, relationships between objects and how to build it.
 
 Templates should be provide generic resource and configuration definitions.
 Templates are assembled to deploy infrastructure and services based on the
-required environment and are easy to maintain in as OS and applications move
+required environment and are easy to maintain as OS and applications move
 through their lifecycle.
 
 *Template Components:*
