@@ -1,6 +1,6 @@
 description: Heat Template - Basic Resource-better
 heat_template_version: '2018-08-31'
-##Parameters comes before resources. Order matters.
+##Parameters comes before resources.
 ##These items can be references in other areas of the template.
 parameters:
   name:
@@ -39,6 +39,7 @@ resources:
 ##Let's get crazy!
 ##Use functions to pull in parameters and allow those 
 ##values to be passed to the configuration.
+##We're also using a condition to ensure that the Debian image uses a specific flavor.
   linuxhost:
     type: OS::Nova::Server
     properties:
