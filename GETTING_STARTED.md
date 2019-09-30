@@ -21,24 +21,24 @@ options available on the left hand side of the browser is important.
 
 Project/Orchestration
 
-1.  You may provide a file located on your local machine, a URL, or direct
+4.  You may provide a file located on your local machine, a URL, or direct
     input. The URL may point to a code repository, but ensure you use the “raw”
     URL, and not the HTML rendered view as when you browse to the file.
 
-2.  If using an environment file, this is selected in the same way, at the same
+5.  If using an environment file, this is selected in the same way, at the same
     tab as the template file with the options of a file or direct input.
 
 ![Stack Create](media/94295511f1cec7a6c53e483ada35b0a8.png)
 
     Stack Create
 
-1.  Provide any parameters required, or change parameter options as needed.
+6.  Provide any parameters required, or change parameter options as needed.
 
 ![Parameters](media/6ccb59744db54c079c024945dc9d01ac.png)
 
 Parameters
 
-1.  Expanding the compute tab, you will see the option for “instances”. This is
+7.  Expanding the compute tab, you will see the option for “instances”. This is
     where you can access the console for any of the instances you deploy in your
     stack. Click on the instance name, which opens a new view.
 
@@ -46,7 +46,7 @@ Parameters
 
     Compute Access
 
-1.  From this instance view you will see a “Console” tab. This is where you can
+8.  From this instance view you will see a “Console” tab. This is where you can
     access the GUI/CLI of the instance OS.
 
 ![Console View](media/bac4d1802a17e8b345bcde2a9da43b6d.png)
