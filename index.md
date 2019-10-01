@@ -11,7 +11,7 @@ for “better” in [training, research, operations]: do OpenStack orchestration
 
 -   [Template examples](https://github.com/tra5hpanda/better-openstack/tree/master/heat/Environments)
 
--   [Environments] (https://github.com/tra5hpanda/better-openstack/tree/master/heat/Templates)
+-   [Environments](https://github.com/tra5hpanda/better-openstack/tree/master/heat/Templates)
 
 >   Please feel free to reach out if you would like to contribute information or
 >   examples!
