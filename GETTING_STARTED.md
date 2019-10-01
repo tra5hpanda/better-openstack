@@ -3,10 +3,13 @@ Getting Started (with Horizon)
 
 Assuming you will first be interacting with Openstack through a web browser, you
 can access the canonical based dashboard through “Horizon”. Interactions with
-the OpenStack cloud environment will be done within your “project”. This is the
-area where you are able to deploy and interact with the resources allocated to
+the OpenStack cloud environment will be done within your “project”. 
+
+Your project is the area where you are able to deploy and interact with the resources allocated to
 you. You may have access to one, or more projects; additionally, multiple
-individuals work within a single project. Familiarizing yourself with the menu
+individuals work within a single project. 
+
+_Familiarizing yourself with the menu
 options available on the left hand side of the browser is important.
 
 1.  Under your Project tab, you will find everything you need to deploy and
@@ -17,7 +20,7 @@ options available on the left hand side of the browser is important.
 
 3.  You will hit the “+ Launch Stack” button.
 
-![Project/Orchestration](media/0d53cc89a9d5aa1451fc862c4e56ad26.png)
+![Project/Orchestration](images/OrchTab.PNG)
 
 Project/Orchestration
 
@@ -26,15 +29,15 @@ Project/Orchestration
     URL, and not the HTML rendered view as when you browse to the file.
 
 5.  If using an environment file, this is selected in the same way, at the same
-    tab as the template file with the options of a file or direct input.
+    tab as the template file with the options of file or direct input.
 
-![Stack Create](media/94295511f1cec7a6c53e483ada35b0a8.png)
+![Stack Create](images/StackCreate.PNG)
 
     Stack Create
 
 6.  Provide any parameters required, or change parameter options as needed.
 
-![Parameters](media/6ccb59744db54c079c024945dc9d01ac.png)
+![Parameters](images/parameters.PNG)
 
 Parameters
 
@@ -42,14 +45,14 @@ Parameters
     where you can access the console for any of the instances you deploy in your
     stack. Click on the instance name, which opens a new view.
 
--   Compute Access
+![Compute Access](images/ComputeAccess.PNG)
 
     Compute Access
 
 8.  From this instance view you will see a “Console” tab. This is where you can
     access the GUI/CLI of the instance OS.
 
-![Console View](media/bac4d1802a17e8b345bcde2a9da43b6d.png)
+![Console View](images/Console.PNG)
 
     Console View
 
@@ -61,5 +64,5 @@ Want to give the Client a try?
 -   If using Linux, source the openrc.sh file in your terminal as indicated in
     the instructions.
 
--   If using Windows, create environment variables for all items with the
-    openrc.sh file; you can use the client through PowerShell.
+-   If using Windows, create environment variables for all items within the
+    openrc.sh file; you can use the client through PowerShell. for example, you would create an environment variable for OS_USERNAME, and set the value to the account username you authenticate to the cloud with.
