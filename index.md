@@ -9,9 +9,9 @@ for “better” in [training, research, operations]: do OpenStack orchestration
 
 -   [Getting Started](GETTING_STARTED.md)
 
--   [Template examples](heat/Templates)
+-   [Template examples](https://github.com/tra5hpanda/better-openstack/tree/master/heat/Environments)
 
--   [Environment Files](heat/Environments)
+-   [Environments] (https://github.com/tra5hpanda/better-openstack/tree/master/heat/Templates)
 
 >   Please feel free to reach out if you would like to contribute information or
 >   examples!
