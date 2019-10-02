@@ -107,7 +107,7 @@ resources:
 
   linuxhost_group2:
     type: OS::Heat::ResourceGroup
-    depends_on: subnet2
+    depends_on: subnet2, linuxhost_group1
     properties:
       count: {get_param: network2_size}
       resource_def:
@@ -115,7 +115,7 @@ resources:
 
   windowshost_group3:
     type: OS::Heat::ResourceGroup
-    depends_on: subnet3
+    depends_on: subnet3, linuxhost_group2
     properties:
       count: {get_param: network3_size}
       resource_def:
