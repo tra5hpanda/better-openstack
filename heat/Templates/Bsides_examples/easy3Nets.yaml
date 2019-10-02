@@ -4,13 +4,27 @@ parameters:
   network1_size:
     type: number
     description: Size of the first topology.
+    constraints:
+    - allowed_values:
+        - 1
+        - 5
+        - 10
   network2_size:
     type: number
     description: Size of the second topology.
+    constraints:
+    - allowed_values:
+        - 1
+        - 5
+        - 10
   network3_size:
     type: number
     description: Size of the third topology.
-
+    constraints:
+    - allowed_values:
+        - 1
+        - 5
+        - 10
 resources:
 
   network1:
