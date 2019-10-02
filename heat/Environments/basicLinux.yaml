@@ -1,6 +1,6 @@
 parameter_defaults:
   hostname: MyUbuntuHost
-  image: Ubuntu 18.04
+  image: Debian Buster
   flavor: cy.small
   user: user
   password: Security!
