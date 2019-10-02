@@ -25,17 +25,8 @@ resources:
       - network: public
       user_data:
         str_replace:
-          template: |
-            #!/bin/bash            
-            echo 127.0.0.1 $(hostname) >> /etc/hosts
-            export DEBIAN_FRONTEND=noninteractive
-            # User Creation
-            echo "CREATE USER"
-            useradd $user -m -U -s /bin/bash
-            usermod -aG sudo $user
-            echo "root:$password" | chpasswd
-            echo "$user:$password" | chpasswd
-          params: 
-            $user: { get_param: user }
-            $password: { get_param: password }
+          params:
+            $user: {get_param : user}
+            $password: {get_param : password}
+          template: {get_file : "https://raw.githubusercontent.com/tra5hpanda/better-openstack/master/heat/host_scripts/linux.sh"}
       user_data_format: RAW
