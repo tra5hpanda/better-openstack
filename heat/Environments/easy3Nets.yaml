@@ -1,4 +1,6 @@
 parameter_defaults:
+  user: user
+  password: Security!
   linux1image: Debian Buster
   linux2image: Ubuntu 18.04
   windowsimage: Windows 1809

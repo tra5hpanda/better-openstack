@@ -24,13 +24,8 @@ resources:
       - network: public
       user_data:
         str_replace:
-          template: |
-            #ps1_sysnative
-             $ErrorActionPreference = 'SilentlyContinue'
-             net user /add $user $password /y
-             net localgroup administrators /add $user
-             exit 1001
-        params: 
-          $user: { get_param: user }
-          $password: { get_param: password }
+          params:
+            $user: {get_param : user}
+            $password: {get_param : password}
+          template: {get_file : "https://raw.githubusercontent.com/tra5hpanda/better-openstack/master/heat/host_scripts/windows.ps1"}
       user_data_format: RAW

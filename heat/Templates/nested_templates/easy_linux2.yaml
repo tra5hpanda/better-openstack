@@ -1,7 +1,10 @@
 description: Heat Template - Linux User network 1
 heat_template_version: '2018-08-31'
 parameters:
-
+  user:
+    type: string
+  password:
+    type: string
   linux2image:
     type: string
   linux2flavor:
