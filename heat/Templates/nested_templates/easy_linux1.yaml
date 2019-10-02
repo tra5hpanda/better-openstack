@@ -29,7 +29,7 @@ resources:
           params:
             $user: {get_param : user}
             $password: {get_param : password}
-            $openport1: { get_param: vulnport3 }
-            $openport2: { get_param: vulnport4 }
+            $openport1: { get_param: vulnport1 }
+            $openport2: { get_param: vulnport2 }
           template: {get_file : "https://raw.githubusercontent.com/tra5hpanda/better-openstack/master/heat/host_scripts/linux1.sh"}
       user_data_format: RAW
