@@ -153,6 +153,7 @@ and many other aspects of a system. Later on the cloud-init will also parse and
 any optional user or vendor data that was passed to the instance.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+
 Do I need to setup Networking?
 ==============================
 
