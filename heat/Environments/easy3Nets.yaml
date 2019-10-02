@@ -12,8 +12,8 @@ parameter_defaults:
   vulnport3: 8888
   vulnport4: 4444
   network1_size: 1
-  network1_size: 1
-  network1_size: 1
+  network2_size: 1
+  network3_size: 1
 
 resource_registry:
   "OS::Nova::Linuxhost1": https://raw.githubusercontent.com/tra5hpanda/better-openstack/master/heat/Templates/nested_templates/easy_linux1.yaml
