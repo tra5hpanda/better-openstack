@@ -13,7 +13,7 @@ resources:
       image: Ubuntu 18.04
       flavor: cy.small
       networks:
-      - network: public
+      - allocate_network: auto
       user_data:  |
         #!/bin/bash
         useradd user -m -U -s /bin/bash
