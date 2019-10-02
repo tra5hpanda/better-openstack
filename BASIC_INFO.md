@@ -167,5 +167,8 @@ When you launch an instance, it is *automatically assigned a private IP address*
 that stays the same until you explicitly terminate the instance. Rebooting an
 instance has no effect on the private IP address.
 
-Want to try for yourself? [Getting Started (with Horizon)](GETTING_STARTED.md)
-==============================================================================
+Want to try for yourself? 
+=========================
+
+[Getting Started (with Horizon)](GETTING_STARTED.md)
+
