@@ -23,7 +23,7 @@ resources:
       image: {get_param: linux1image}
       flavor: {get_param: linux1flavor}
       networks:
-      - subnet: {get_resource: subnet1}
+      - subnet: subnet1
       user_data:
         str_replace:
           params:
