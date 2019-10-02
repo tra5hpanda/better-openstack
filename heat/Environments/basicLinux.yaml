@@ -1,5 +1,5 @@
 parameter_defaults:
-  hostname: MyUbuntuHost
+  hostname: MyLinuxHost
   image: Debian Buster
   flavor: cy.small
   user: user

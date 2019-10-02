@@ -5,14 +5,14 @@ heat_template_version: '2018-08-31'
 parameters:
   name:
     type: string
-    default: MyUbuntuHost
+    default: MyLinuxHost
   image:
     type: string
     default: Debian Buster
     constraints:
     - allowed_values:
-        - Ubuntu 18.04
         - Debian Buster
+        - Ubuntu 18.04
   flavor:
     type: string
     default: cy.small

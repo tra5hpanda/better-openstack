@@ -9,7 +9,7 @@ resources:
 ##https://docs.openstack.org/heat/rocky/template_guide/openstack.html
     type: OS::Nova::Server
     properties:
-      name: Linux_host
+      name: MyLinuxHost
       image: Ubuntu 18.04
       flavor: cy.small
       networks:
