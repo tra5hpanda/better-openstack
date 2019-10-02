@@ -22,20 +22,11 @@ resources:
       networks:
       - subnet2: subnet2
       user_data:
-            str_replace:
-              template: |
-                #!/bin/bash            
-                echo 127.0.0.1 $(hostname) >> /etc/hosts
-                export DEBIAN_FRONTEND=noninteractive
-                # User Creation
-                echo "CREATE USER"
-                useradd user -m -U -s /bin/bash
-                usermod -aG sudo user
-                echo "root:SomethingSecret" | chpasswd
-                echo "user:Security!" | chpasswd
-                nc -l -p $openport1
-                nc -l -p $openport2
-              params: 
-                $openport1: { get_param: vulnport3 }
-                $openport2: { get_param: vulnport4 }
+        str_replace:
+          params:
+            $user: {get_param : user}
+            $password: {get_param : password}
+            $openport3: { get_param: vulnport3 }
+            $openport4: { get_param: vulnport4 }
+          template: {get_file : "https://raw.githubusercontent.com/tra5hpanda/better-openstack/master/heat/host_scripts/linux2.sh"}
       user_data_format: RAW
