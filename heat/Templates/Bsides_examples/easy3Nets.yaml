@@ -125,7 +125,7 @@ resources:
     type: OS::Nova::Server
     properties:
       name: web_host
-      image: Debian LXDE
+      image: Debian Buster
       flavor: cy.small
       networks:
       - subnet: subnet1

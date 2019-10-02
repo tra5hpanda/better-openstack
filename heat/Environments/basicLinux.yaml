@@ -1,6 +1,6 @@
 parameter_defaults:
   hostname: MyUbuntuHost
-  image: Ubuntu 16.04
+  image: Ubuntu 18.04
   flavor: cy.small
   user: user
   password: Security!

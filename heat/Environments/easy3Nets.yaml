@@ -1,7 +1,7 @@
 parameter_defaults:
-  linux1image: Ubuntu 16.04
+  linux1image: Debian Buster
   linux2image: Ubuntu 18.04
-  windowsimage: Windows 10 LTSC 2019
+  windowsimage: Windows 1809
   linux1flavor: cy.small
   linux2flavor: cy.medium
   windowsflavor: cy.large

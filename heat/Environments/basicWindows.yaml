@@ -1,6 +1,6 @@
 parameter_defaults:
   hostname: MyWindowsHost
-  image: Windows 10 LTSC 2019
+  image: Windows 10 1809
   flavor: cy.medium
   user: user
   password: Security!

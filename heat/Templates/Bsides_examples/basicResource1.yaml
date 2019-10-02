@@ -10,7 +10,7 @@ resources:
     type: OS::Nova::Server
     properties:
       name: Linux_host
-      image: Ubuntu 16.04
+      image: Ubuntu 18.04
       flavor: cy.small
       networks:
       - network: public
