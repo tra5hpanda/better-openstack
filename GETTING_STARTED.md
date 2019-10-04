@@ -10,6 +10,7 @@ To reach the dashboard for the Beta/Experimental Range for the Georgia Cyber Cen
 If you have requested and been issues an account, you may use your login and password. The domain field will be filled in with "default".
 
 To request an account, contact: cybertraining@augusta.edu
+
 You will be required to sign and return a EULA and adhere to the standards set within while using the range.
 
 Once you've logged in
