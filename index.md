@@ -14,4 +14,4 @@ for “better” in [training, research, operations]: do OpenStack orchestration
 -   [Environment Examples](https://github.com/tra5hpanda/better-openstack/tree/master/heat/Environments)
 
 >   Please feel free to reach out if you would like to contribute information or
->   examples!
+>   examples via an issue via this github repositry. 
