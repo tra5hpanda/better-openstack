@@ -2,8 +2,20 @@ Getting Started (with Horizon)
 ==============================
 
 Assuming you will first be interacting with Openstack through a web browser, you
-can access the canonical based dashboard through “Horizon”. Interactions with
-the OpenStack cloud environment will be done within your “project”. 
+can access the canonical based dashboard through “Horizon”. 
+
+To reach the dashboard for the Beta/Experimental Range for the Georgia Cyber Center, visit:
+(https://dashboard.gacyberrange.org)
+
+If you have requested and been issues an account, you may use your login and password. The domain field will be filled in with "default".
+
+To request an account, contact: cybertraining@augusta.edu
+You will be required to sign and return a EULA and adhere to the standards set within while using the range.
+
+Once you've logged in
+======================
+
+Interactions with the OpenStack cloud environment will be done within your “project”. 
 
 Your project is the area where you are able to deploy and interact with the resources allocated to
 you. You may have access to one, or more projects; additionally, multiple
