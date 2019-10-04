@@ -10,7 +10,7 @@ you. You may have access to one, or more projects; additionally, multiple
 individuals work within a single project. 
 
 _Familiarizing yourself with the menu
-options available on the left hand side of the browser is important.
+options available on the left hand side of the browser is important._
 
 [1.]  Under your Project tab, you will find everything you need to deploy and
     access your stack.
